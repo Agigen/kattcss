@@ -1,0 +1,28 @@
+/*------------------------------------*\
+    Settings - Layout
+\*------------------------------------*/
+
+/**
+ * Sourced from Inuitcss (https://github.com/inuitcss), Copyright 2014 Harry Roberts
+ */
+
+// Predefine the variables below in order to alter and enable specific features.
+$katt-layout-namespace:        $katt-namespace !default;
+
+$katt-layout-gutter:           $katt-base-spacing-unit !default;
+$katt-layout-gutter--tiny:       quarter($katt-layout-gutter) !default;
+$katt-layout-gutter--small:        halve($katt-layout-gutter) !default;
+$katt-layout-gutter--large:       double($katt-layout-gutter) !default;
+$katt-layout-gutter--huge:     quadruple($katt-layout-gutter) !default;
+
+$katt-enable-layout--tiny:     false !default;
+$katt-enable-layout--small:    false !default;
+$katt-enable-layout--large:    false !default;
+$katt-enable-layout--huge:     false !default;
+$katt-enable-layout--flush:    false !default;
+$katt-enable-layout--rev:      false !default;
+$katt-enable-layout--middle:   false !default;
+$katt-enable-layout--bottom:   false !default;
+$katt-enable-layout--right:    false !default;
+$katt-enable-layout--center:   false !default;
+$katt-enable-layout--auto:     false !default;

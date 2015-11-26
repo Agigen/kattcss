@@ -1,0 +1,21 @@
+/*------------------------------------*\
+    Settings - Tables
+\*------------------------------------*/
+
+$katt-table-namespace:         $katt-namespace !default;
+
+$katt-table-padding--compact:  quarter($katt-base-spacing-unit) !default;
+$katt-table-padding--cosy:     halve($katt-base-spacing-unit) !default;
+$katt-table-padding--comfy:    $katt-base-spacing-unit !default;
+
+$katt-table-border-width:      1px !default;
+$katt-table-border-style:      solid !default;
+$katt-table-border-color:      #ccc !default;
+
+$katt-enable-table--fixed:     false !default;
+$katt-enable-table--compact:   false !default;
+$katt-enable-table--cosy:      false !default;
+$katt-enable-table--comfy:     false !default;
+$katt-enable-table--cells:     false !default;
+$katt-enable-table--rows:      false !default;
+$katt-enable-table--columns:   false !default;

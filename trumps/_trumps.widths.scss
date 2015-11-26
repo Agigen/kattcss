@@ -1,0 +1,47 @@
+/*------------------------------------*\
+    Trumps - Widths
+\*------------------------------------*/
+
+/**
+ * Sourced from Inuitcss (https://github.com/inuitcss), Copyright 2014 Harry Roberts
+ */
+
+/**
+ * A series of width helper classes that you can use to size things like grid
+ * systems. Classes can take a fraction-like format (e.g. `.u-2/3`) or a spoken-
+ * word format (e.g. `.u-2-of-3`). Use these in your markup:
+ *
+ * <div class="u-7/12">
+ */
+
+@if ($katt-enable-module-trumps-widths == true) {
+
+@include katt-widths($katt-widths-columns);
+
+/*------------------------------------*\
+    #WIDTHS-RESPONSIVE
+\*------------------------------------*/
+
+/**
+ * Responsive width classes based on your responsive settings.
+ */
+
+// Loop over our breakpoints defined in _settings.responsive.scss
+@each $breakpoint in $breakpoints {
+
+    // Get the name of the breakpoint.
+    $alias: nth($breakpoint, 1);
+
+    @include media-query($alias) {
+
+        // Loop through each of our column sizes and generate its responsive width
+        // classes.
+        @each $katt-widths-column in $katt-widths-columns-responsive {
+            @include katt-widths($katt-widths-column, -#{$alias});
+        }
+
+    }
+
+}
+
+}

@@ -1,0 +1,142 @@
+/*------------------------------------*\
+    Objects - Block
+\*------------------------------------*/
+
+/**
+ * Sourced from Inuitcss (https://github.com/inuitcss), Copyright 2014 Harry Roberts
+ */
+
+/**
+ * The block object simply stacks an image on top of some text-like content.
+ */
+
+@if ($katt-enable-module-objects-block == true) {
+
+/**
+ * Stacked image-with-text object. A simple abstraction to cover a very commonly
+ * occurring design pattern.
+ */
+.#{$katt-block-namespace}block,
+%#{$katt-block-namespace}block {
+    display: block;
+}
+
+
+    /**
+     * 1. Eliminate whitespace around images.
+     */
+    .#{$katt-block-namespace}block__img,
+    %#{$katt-block-namespace}block__img {
+        vertical-align: middle; /* [1] */
+        margin-bottom: $katt-block-gutter;
+
+        @if ($katt-enable-block--flush == true) {
+
+            /**
+             * No space between the image and the text content.
+             */
+
+            .#{$katt-block-namespace}block--flush > &,
+            %#{$katt-block-namespace}block--flush > & {
+                margin-bottom: 0;
+            }
+
+        }
+
+        @if ($katt-enable-block--tiny == true) {
+
+            /**
+             * Tiny space between the image and the text content.
+             */
+
+            .#{$katt-block-namespace}block--tiny > &,
+            %#{$katt-block-namespace}block--tiny > & {
+                margin-bottom: $katt-block-gutter--tiny;
+            }
+
+        }
+
+        @if ($katt-enable-block--small == true) {
+
+            /**
+             * Small space between the image and the text content.
+             */
+
+            .#{$katt-block-namespace}block--small > &,
+            %#{$katt-block-namespace}block--small > & {
+                margin-bottom: $katt-block-gutter--small
+            }
+
+        }
+
+        @if ($katt-enable-block--large == true) {
+
+            /**
+             * Large space between the image and the text content.
+             */
+
+            .#{$katt-block-namespace}block--large > &,
+            %#{$katt-block-namespace}block--large > & {
+                margin-bottom: $katt-block-gutter--large;
+            }
+
+        }
+
+        @if ($katt-enable-block--huge == true) {
+
+            /**
+             * Huge space between the image and the text content.
+             */
+
+            .#{$katt-block-namespace}block--huge > &,
+            %#{$katt-block-namespace}block--huge > & {
+                margin-bottom: $katt-block-gutter--huge;
+            }
+
+        }
+
+    }
+
+
+
+
+
+    /**
+     * Text-content.
+     */
+    .#{$katt-block-namespace}block__body,
+    %#{$katt-block-namespace}block__body {
+        display: block;
+    }
+
+
+
+
+
+@if ($katt-enable-block--right == true) {
+
+    /**
+     * Right-aligned blocks.
+     */
+
+    .#{$katt-block-namespace}block--right,
+    %#{$katt-block-namespace}block--right {
+        text-align: right;
+    }
+
+}
+
+@if ($katt-enable-block--center == true) {
+
+    /**
+     * Center-aligned blocks.
+     */
+
+    .#{$katt-block-namespace}block--center,
+    %#{$katt-block-namespace}block--center {
+        text-align: center;
+    }
+
+}
+
+}

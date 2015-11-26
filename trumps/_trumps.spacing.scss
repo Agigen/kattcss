@@ -1,0 +1,707 @@
+/*------------------------------------*\
+    Trumps - Spacing
+\*------------------------------------*/
+
+/**
+ * Sourced from Inuitcss (https://github.com/inuitcss), Copyright 2014 Harry Roberts
+ */
+
+/**
+ * Margin and padding helper classes. Use these to tweak layout on a micro
+ * level.
+ *
+ * `.(m|p)(t|r|b|l|h|v)(-|+|0) {}` = margin/padding top/right/bottom/left/horizontal/vertical less/more/none
+ */
+
+
+// Internally used mixin to quickly generate our different variants based upon
+// the breakpoints defined in `settings.responsive`.
+
+@mixin katt-generate-spacing() {
+
+    // Loop through our previously-defined breakpoints.
+    @each $breakpoint in $breakpoints {
+
+        $katt-generate-spacing-alias:      nth($breakpoint, 1) !global;
+        $katt-generate-spacing-condition:  nth($breakpoint, 2);
+
+        // This isn’t ideal, but we definitely don’t want to generate widths
+        // for retina devices. Exclude retina media-qeuries manually.
+        @if ($katt-generate-spacing-alias != "retina") {
+
+            @include media-query($katt-generate-spacing-alias) {
+                @content;
+            } // Close media query.
+
+        } // Close retina check.
+
+        // Take the global variable back out of scope.
+        $katt-generate-spacing-alias: null !global;
+
+    } // Close breakpoints loop.
+
+}
+
+@if ($katt-enable-module-trumps-spacing == true) {
+
+// Non-responsive margins and paddings
+@if ($katt-enable-margins == true) {
+
+    /**
+     * Margin helper classes.
+     *
+     * Add margins.
+     */
+
+    .#{$katt-spacing-namespace}u-m     { margin:           $katt-margin !important; }
+    .#{$katt-spacing-namespace}u-mt    { margin-top:       $katt-margin !important; }
+    .#{$katt-spacing-namespace}u-mr    { margin-right:     $katt-margin !important; }
+    .#{$katt-spacing-namespace}u-mb    { margin-bottom:    $katt-margin !important; }
+    .#{$katt-spacing-namespace}u-ml    { margin-left:      $katt-margin !important; }
+    .#{$katt-spacing-namespace}u-mh    { margin-right:     $katt-margin !important; margin-left:      $katt-margin !important; }
+    .#{$katt-spacing-namespace}u-mv    { margin-top:       $katt-margin !important; margin-bottom:    $katt-margin !important; }
+
+}
+
+
+@if ($katt-enable-margins--tiny == true) {
+
+    /**
+     * Add tiny margins.
+     */
+
+    .#{$katt-spacing-namespace}u-m\/4     { margin:           $katt-margin--tiny !important; }
+    .#{$katt-spacing-namespace}u-mt\/4  { margin-top:       $katt-margin--tiny !important; }
+    .#{$katt-spacing-namespace}u-mr\/4  { margin-right:     $katt-margin--tiny !important; }
+    .#{$katt-spacing-namespace}u-mb\/4  { margin-bottom:    $katt-margin--tiny !important; }
+    .#{$katt-spacing-namespace}u-ml\/4  { margin-left:      $katt-margin--tiny !important; }
+    .#{$katt-spacing-namespace}u-mh\/4  { margin-right:     $katt-margin--tiny !important; margin-left:     $katt-margin--tiny !important; }
+    .#{$katt-spacing-namespace}u-mv\/4  { margin-top:       $katt-margin--tiny !important; margin-bottom:   $katt-margin--tiny !important; }
+
+}
+
+
+@if ($katt-enable-margins--small == true) {
+
+    /**
+     * Add small margins.
+     */
+
+    .#{$katt-spacing-namespace}u-m\/2    { margin:           $katt-margin--small !important; }
+    .#{$katt-spacing-namespace}u-mt\/2   { margin-top:       $katt-margin--small !important; }
+    .#{$katt-spacing-namespace}u-mr\/2   { margin-right:     $katt-margin--small !important; }
+    .#{$katt-spacing-namespace}u-mb\/2   { margin-bottom:    $katt-margin--small !important; }
+    .#{$katt-spacing-namespace}u-ml\/2   { margin-left:      $katt-margin--small !important; }
+    .#{$katt-spacing-namespace}u-mh\/2   { margin-right:     $katt-margin--small !important; margin-left:   $katt-margin--small !important; }
+    .#{$katt-spacing-namespace}u-mv\/2   { margin-top:       $katt-margin--small !important; margin-bottom: $katt-margin--small !important; }
+
+}
+
+
+@if ($katt-enable-margins--large == true) {
+
+    /**
+     * Add large margins.
+     */
+
+    .#{$katt-spacing-namespace}u-m2   { margin:           $katt-margin--large !important; }
+    .#{$katt-spacing-namespace}u-mt2  { margin-top:       $katt-margin--large !important; }
+    .#{$katt-spacing-namespace}u-mr2  { margin-right:     $katt-margin--large !important; }
+    .#{$katt-spacing-namespace}u-mb2  { margin-bottom:    $katt-margin--large !important; }
+    .#{$katt-spacing-namespace}u-ml2  { margin-left:      $katt-margin--large !important; }
+    .#{$katt-spacing-namespace}u-mh2  { margin-right:     $katt-margin--large !important; margin-left:      $katt-margin--large !important; }
+    .#{$katt-spacing-namespace}u-mv2  { margin-top:       $katt-margin--large !important; margin-bottom:    $katt-margin--large !important; }
+
+}
+
+
+@if ($katt-enable-margins--huge == true) {
+
+    /**
+     * Add huge margins.
+     */
+
+    .#{$katt-spacing-namespace}u-m4     { margin:           $katt-margin--huge !important; }
+    .#{$katt-spacing-namespace}u-mt4    { margin-top:       $katt-margin--huge !important; }
+    .#{$katt-spacing-namespace}u-mr4    { margin-right:     $katt-margin--huge !important; }
+    .#{$katt-spacing-namespace}u-mb4    { margin-bottom:    $katt-margin--huge !important; }
+    .#{$katt-spacing-namespace}u-ml4    { margin-left:      $katt-margin--huge !important; }
+    .#{$katt-spacing-namespace}u-mh4    { margin-right:     $katt-margin--huge !important; margin-left:   $katt-margin--huge !important; }
+    .#{$katt-spacing-namespace}u-mv4    { margin-top:       $katt-margin--huge !important; margin-bottom: $katt-margin--huge !important; }
+
+}
+
+
+@if ($katt-enable-margins--none == true) {
+
+    /**
+     * Remove margins.
+     */
+
+    .#{$katt-spacing-namespace}u-m0    { margin:           0 !important; }
+    .#{$katt-spacing-namespace}u-mt0   { margin-top:       0 !important; }
+    .#{$katt-spacing-namespace}u-mr0   { margin-right:     0 !important; }
+    .#{$katt-spacing-namespace}u-mb0   { margin-bottom:    0 !important; }
+    .#{$katt-spacing-namespace}u-ml0   { margin-left:      0 !important; }
+    .#{$katt-spacing-namespace}u-mh0   { margin-right:     0 !important; margin-left:      0 !important; }
+    .#{$katt-spacing-namespace}u-mv0   { margin-top:       0 !important; margin-bottom:    0 !important; }
+
+}
+
+
+@if ($katt-enable-margins--negative == true) {
+
+    /**
+     * Negative margins.
+     */
+
+    .#{$katt-spacing-namespace}u-nm    { margin:           -$katt-margin !important; }
+    .#{$katt-spacing-namespace}u-nmt   { margin-top:       -$katt-margin !important; }
+    .#{$katt-spacing-namespace}u-nmr   { margin-right:     -$katt-margin !important; }
+    .#{$katt-spacing-namespace}u-nmb   { margin-bottom:    -$katt-margin !important; }
+    .#{$katt-spacing-namespace}u-nml   { margin-left:      -$katt-margin !important; }
+    .#{$katt-spacing-namespace}u-nmh   { margin-right:     -$katt-margin !important; margin-left:      -$katt-margin !important; }
+    .#{$katt-spacing-namespace}u-nmv   { margin-top:       -$katt-margin !important; margin-bottom:    -$katt-margin !important; }
+
+}
+
+
+@if ($katt-enable-margins--negative-tiny == true) {
+
+    /**
+     * Tiny negative margins.
+     */
+
+    .#{$katt-spacing-namespace}u-nm\/4  { margin:           -$katt-margin--tiny !important; }
+    .#{$katt-spacing-namespace}u-nmt\/4 { margin-top:       -$katt-margin--tiny !important; }
+    .#{$katt-spacing-namespace}u-nmr\/4 { margin-right:     -$katt-margin--tiny !important; }
+    .#{$katt-spacing-namespace}u-nmb\/4 { margin-bottom:    -$katt-margin--tiny !important; }
+    .#{$katt-spacing-namespace}u-nml\/4 { margin-left:      -$katt-margin--tiny !important; }
+    .#{$katt-spacing-namespace}u-nmh\/4 { margin-right:     -$katt-margin--tiny !important; margin-left:     -$katt-margin--tiny !important; }
+    .#{$katt-spacing-namespace}u-nmv\/4 { margin-top:       -$katt-margin--tiny !important; margin-bottom:   -$katt-margin--huge !important; }
+
+}
+
+
+@if ($katt-enable-margins--negative-small == true) {
+
+    /**
+     * Small negative margins.
+     */
+
+    .#{$katt-spacing-namespace}u-nm\/2   { margin:           -$katt-margin--small !important; }
+    .#{$katt-spacing-namespace}u-nmt\/2  { margin-top:       -$katt-margin--small !important; }
+    .#{$katt-spacing-namespace}u-nmr\/2  { margin-right:     -$katt-margin--small !important; }
+    .#{$katt-spacing-namespace}u-nmb\/2  { margin-bottom:    -$katt-margin--small !important; }
+    .#{$katt-spacing-namespace}u-nml\/2  { margin-left:      -$katt-margin--small !important; }
+    .#{$katt-spacing-namespace}u-nmh\/2  { margin-right:     -$katt-margin--small !important; margin-left:   -$katt-margin--small !important; }
+    .#{$katt-spacing-namespace}u-nmv\/2  { margin-top:       -$katt-margin--small !important; margin-bottom: -$katt-margin--small !important; }
+
+}
+
+
+@if ($katt-enable-margins--negative-large == true) {
+
+    /**
+     * Large negative margins.
+     */
+
+    .#{$katt-spacing-namespace}u-nm2  { margin:           -$katt-margin--large !important; }
+    .#{$katt-spacing-namespace}u-nmt2 { margin-top:       -$katt-margin--large !important; }
+    .#{$katt-spacing-namespace}u-nmr2 { margin-right:     -$katt-margin--large !important; }
+    .#{$katt-spacing-namespace}u-nmb2 { margin-bottom:    -$katt-margin--large !important; }
+    .#{$katt-spacing-namespace}u-nml2 { margin-left:      -$katt-margin--large !important; }
+    .#{$katt-spacing-namespace}u-nmh2 { margin-right:     -$katt-margin--large !important; margin-left:      -$katt-margin--large !important; }
+    .#{$katt-spacing-namespace}u-nmv2 { margin-top:       -$katt-margin--large !important; margin-bottom:    -$katt-margin--large !important; }
+
+}
+
+
+@if ($katt-enable-margins--negative-huge == true) {
+
+    /**
+     * Huge negative margins.
+     */
+
+    .#{$katt-spacing-namespace}u-nm4    { margin:           -$katt-margin--huge !important; }
+    .#{$katt-spacing-namespace}u-nmt4   { margin-top:       -$katt-margin--huge !important; }
+    .#{$katt-spacing-namespace}u-nmr4   { margin-right:     -$katt-margin--huge !important; }
+    .#{$katt-spacing-namespace}u-nmb4   { margin-bottom:    -$katt-margin--huge !important; }
+    .#{$katt-spacing-namespace}u-nml4   { margin-left:      -$katt-margin--huge !important; }
+    .#{$katt-spacing-namespace}u-nmh4   { margin-right:     -$katt-margin--huge !important; margin-left:   -$katt-margin--huge !important; }
+    .#{$katt-spacing-namespace}u-nmv4   { margin-top:       -$katt-margin--huge !important; margin-bottom: -$katt-margin--huge !important; }
+
+}
+
+
+
+
+
+@if ($katt-enable-paddings == true) {
+
+    /**
+     * Padding helper classes.
+     *
+     * Add paddings.
+     */
+
+    .#{$katt-spacing-namespace}u-p     { padding:          $katt-padding !important; }
+    .#{$katt-spacing-namespace}u-pt    { padding-top:      $katt-padding !important; }
+    .#{$katt-spacing-namespace}u-pr    { padding-right:    $katt-padding !important; }
+    .#{$katt-spacing-namespace}u-pb    { padding-bottom:   $katt-padding !important; }
+    .#{$katt-spacing-namespace}u-pl    { padding-left:     $katt-padding !important; }
+    .#{$katt-spacing-namespace}u-ph    { padding-right:    $katt-padding !important; padding-left:    $katt-padding !important; }
+    .#{$katt-spacing-namespace}u-pv    { padding-top:      $katt-padding !important; padding-bottom:  $katt-padding !important; }
+
+}
+
+
+@if ($katt-enable-paddings--tiny == true) {
+
+    /**
+     * Add tiny paddings.
+     */
+
+    .#{$katt-spacing-namespace}u-p\/4   { padding:           $katt-padding--tiny !important; }
+    .#{$katt-spacing-namespace}u-pt\/4  { padding-top:       $katt-padding--tiny !important; }
+    .#{$katt-spacing-namespace}u-pr\/4  { padding-right:     $katt-padding--tiny !important; }
+    .#{$katt-spacing-namespace}u-pb\/4  { padding-bottom:    $katt-padding--tiny !important; }
+    .#{$katt-spacing-namespace}u-pl\/4  { padding-left:      $katt-padding--tiny !important; }
+    .#{$katt-spacing-namespace}u-ph\/4  { padding-right:     $katt-padding--tiny !important; padding-left:      $katt-padding--tiny !important; }
+    .#{$katt-spacing-namespace}u-pv\/4  { padding-top:       $katt-padding--tiny !important; padding-bottom:    $katt-padding--tiny !important; }
+
+}
+
+
+@if ($katt-enable-paddings--small == true) {
+
+    /**
+     * Add small paddings.
+     */
+
+    .#{$katt-spacing-namespace}u-p\/2    { padding:           $katt-padding--small !important; }
+    .#{$katt-spacing-namespace}u-pt\/2   { padding-top:       $katt-padding--small !important; }
+    .#{$katt-spacing-namespace}u-pr\/2   { padding-right:     $katt-padding--small !important; }
+    .#{$katt-spacing-namespace}u-pb\/2   { padding-bottom:    $katt-padding--small !important; }
+    .#{$katt-spacing-namespace}u-pl\/2   { padding-left:      $katt-padding--small !important; }
+    .#{$katt-spacing-namespace}u-ph\/2   { padding-right:     $katt-padding--small !important; padding-left:    $katt-padding--small !important; }
+    .#{$katt-spacing-namespace}u-pv\/2   { padding-top:       $katt-padding--small !important; padding-bottom:  $katt-padding--small !important; }
+
+}
+
+
+@if ($katt-enable-paddings--large == true) {
+
+    /**
+     * Add large paddings.
+     */
+
+    .#{$katt-spacing-namespace}u-p2   { padding:           $katt-padding--large !important; }
+    .#{$katt-spacing-namespace}u-pt2  { padding-top:       $katt-padding--large !important; }
+    .#{$katt-spacing-namespace}u-pr2  { padding-right:     $katt-padding--large !important; }
+    .#{$katt-spacing-namespace}u-pb2  { padding-bottom:    $katt-padding--large !important; }
+    .#{$katt-spacing-namespace}u-pl2  { padding-left:      $katt-padding--large !important; }
+    .#{$katt-spacing-namespace}u-ph2  { padding-right:     $katt-padding--large !important; padding-left:   $katt-padding--large !important; }
+    .#{$katt-spacing-namespace}u-pv2  { padding-top:       $katt-padding--large !important; padding-bottom: $katt-padding--large !important; }
+
+}
+
+
+@if ($katt-enable-paddings--huge == true) {
+
+    /**
+     * Add huge paddings.
+     */
+
+    .#{$katt-spacing-namespace}u-p4     { padding:           $katt-padding--huge !important; }
+    .#{$katt-spacing-namespace}u-pt4    { padding-top:       $katt-padding--huge !important; }
+    .#{$katt-spacing-namespace}u-pr4    { padding-right:     $katt-padding--huge !important; }
+    .#{$katt-spacing-namespace}u-pb4    { padding-bottom:    $katt-padding--huge !important; }
+    .#{$katt-spacing-namespace}u-pl4    { padding-left:      $katt-padding--huge !important; }
+    .#{$katt-spacing-namespace}u-ph4    { padding-right:     $katt-padding--huge !important; padding-left:    $katt-padding--huge !important; }
+    .#{$katt-spacing-namespace}u-pv4    { padding-top:       $katt-padding--huge !important; padding-bottom:  $katt-padding--huge !important; }
+
+}
+
+
+@if ($katt-enable-paddings--none == true) {
+
+    /**
+     * Remove paddings.
+     */
+
+    .#{$katt-spacing-namespace}u-p0    { padding:          0 !important; }
+    .#{$katt-spacing-namespace}u-pt0   { padding-top:      0 !important; }
+    .#{$katt-spacing-namespace}u-pr0   { padding-right:    0 !important; }
+    .#{$katt-spacing-namespace}u-pb0   { padding-bottom:   0 !important; }
+    .#{$katt-spacing-namespace}u-pl0   { padding-left:     0 !important; }
+    .#{$katt-spacing-namespace}u-ph0   { padding-right:    0 !important; padding-left:     0 !important; }
+    .#{$katt-spacing-namespace}u-pv0   { padding-top:      0 !important; padding-bottom:   0 !important; }
+
+}
+
+// Responsive margins and paddings
+@if ($katt-enable-responsive-margins == true) {
+
+    /**
+     * Margin helper classes.
+     *
+     * Add margins.
+     */
+
+    @include katt-generate-spacing() {
+
+        .#{$katt-spacing-namespace}u-m-#{$katt-generate-spacing-alias}      { margin:           $katt-margin !important; }
+        .#{$katt-spacing-namespace}u-mt-#{$katt-generate-spacing-alias}     { margin-top:       $katt-margin !important; }
+        .#{$katt-spacing-namespace}u-mr-#{$katt-generate-spacing-alias}     { margin-right:     $katt-margin !important; }
+        .#{$katt-spacing-namespace}u-mb-#{$katt-generate-spacing-alias}     { margin-bottom:    $katt-margin !important; }
+        .#{$katt-spacing-namespace}u-ml-#{$katt-generate-spacing-alias}     { margin-left:      $katt-margin !important; }
+        .#{$katt-spacing-namespace}u-mh-#{$katt-generate-spacing-alias}     { margin-right:     $katt-margin !important; margin-left:      $katt-margin !important; }
+        .#{$katt-spacing-namespace}u-mv-#{$katt-generate-spacing-alias}     { margin-top:       $katt-margin !important; margin-bottom:    $katt-margin !important; }
+
+    }
+
+}
+
+
+@if ($katt-enable-responsive-margins--tiny == true) {
+
+    /**
+     * Add tiny margins.
+     */
+
+    @include katt-generate-spacing() {
+
+        .#{$katt-spacing-namespace}u-m\/4-#{$katt-generate-spacing-alias}     { margin:           $katt-margin--tiny !important; }
+        .#{$katt-spacing-namespace}u-mt\/4-#{$katt-generate-spacing-alias}    { margin-top:       $katt-margin--tiny !important; }
+        .#{$katt-spacing-namespace}u-mr\/4-#{$katt-generate-spacing-alias}    { margin-right:     $katt-margin--tiny !important; }
+        .#{$katt-spacing-namespace}u-mb\/4-#{$katt-generate-spacing-alias}    { margin-bottom:    $katt-margin--tiny !important; }
+        .#{$katt-spacing-namespace}u-ml\/4-#{$katt-generate-spacing-alias}    { margin-left:      $katt-margin--tiny !important; }
+        .#{$katt-spacing-namespace}u-mh\/4-#{$katt-generate-spacing-alias}    { margin-right:     $katt-margin--tiny !important; margin-left:     $katt-margin--tiny !important; }
+        .#{$katt-spacing-namespace}u-mv\/4-#{$katt-generate-spacing-alias}    { margin-top:       $katt-margin--tiny !important; margin-bottom:   $katt-margin--tiny !important; }
+
+    }
+
+}
+
+
+@if ($katt-enable-responsive-margins--small == true) {
+
+    /**
+     * Add small margins.
+     */
+
+    @include katt-generate-spacing() {
+
+        .#{$katt-spacing-namespace}u-m\/2-#{$katt-generate-spacing-alias}      { margin:           $katt-margin--small !important; }
+        .#{$katt-spacing-namespace}u-mt\/2-#{$katt-generate-spacing-alias}     { margin-top:       $katt-margin--small !important; }
+        .#{$katt-spacing-namespace}u-mr\/2-#{$katt-generate-spacing-alias}     { margin-right:     $katt-margin--small !important; }
+        .#{$katt-spacing-namespace}u-mb\/2-#{$katt-generate-spacing-alias}     { margin-bottom:    $katt-margin--small !important; }
+        .#{$katt-spacing-namespace}u-ml\/2-#{$katt-generate-spacing-alias}     { margin-left:      $katt-margin--small !important; }
+        .#{$katt-spacing-namespace}u-mh\/2-#{$katt-generate-spacing-alias}     { margin-right:     $katt-margin--small !important; margin-left:   $katt-margin--small !important; }
+        .#{$katt-spacing-namespace}u-mv\/2-#{$katt-generate-spacing-alias}     { margin-top:       $katt-margin--small !important; margin-bottom: $katt-margin--small !important; }
+
+    }
+
+}
+
+
+@if ($katt-enable-responsive-margins--large == true) {
+
+    /**
+     * Add large margins.
+     */
+
+    @include katt-generate-spacing() {
+
+        .#{$katt-spacing-namespace}u-m2-#{$katt-generate-spacing-alias}     { margin:           $katt-margin--large !important; }
+        .#{$katt-spacing-namespace}u-mt2-#{$katt-generate-spacing-alias}    { margin-top:       $katt-margin--large !important; }
+        .#{$katt-spacing-namespace}u-mr2-#{$katt-generate-spacing-alias}    { margin-right:     $katt-margin--large !important; }
+        .#{$katt-spacing-namespace}u-mb2-#{$katt-generate-spacing-alias}    { margin-bottom:    $katt-margin--large !important; }
+        .#{$katt-spacing-namespace}u-ml2-#{$katt-generate-spacing-alias}    { margin-left:      $katt-margin--large !important; }
+        .#{$katt-spacing-namespace}u-mh2-#{$katt-generate-spacing-alias}    { margin-right:     $katt-margin--large !important; margin-left:      $katt-margin--large !important; }
+        .#{$katt-spacing-namespace}u-mv2-#{$katt-generate-spacing-alias}    { margin-top:       $katt-margin--large !important; margin-bottom:    $katt-margin--large !important; }
+
+    }
+
+}
+
+
+@if ($katt-enable-responsive-margins--huge == true) {
+
+    /**
+     * Add huge margins.
+     */
+
+    @include katt-generate-spacing() {
+
+        .#{$katt-spacing-namespace}u-m4-#{$katt-generate-spacing-alias}   { margin:           $katt-margin--huge !important; }
+        .#{$katt-spacing-namespace}u-mt4-#{$katt-generate-spacing-alias}  { margin-top:       $katt-margin--huge !important; }
+        .#{$katt-spacing-namespace}u-mr4-#{$katt-generate-spacing-alias}  { margin-right:     $katt-margin--huge !important; }
+        .#{$katt-spacing-namespace}u-mb4-#{$katt-generate-spacing-alias}  { margin-bottom:    $katt-margin--huge !important; }
+        .#{$katt-spacing-namespace}u-ml4-#{$katt-generate-spacing-alias}  { margin-left:      $katt-margin--huge !important; }
+        .#{$katt-spacing-namespace}u-mh4-#{$katt-generate-spacing-alias}  { margin-right:     $katt-margin--huge !important; margin-left:   $katt-margin--huge !important; }
+        .#{$katt-spacing-namespace}u-mv4-#{$katt-generate-spacing-alias}  { margin-top:       $katt-margin--huge !important; margin-bottom: $katt-margin--huge !important; }
+
+    }
+
+}
+
+
+@if ($katt-enable-responsive-margins--none == true) {
+
+    /**
+     * Remove margins.
+     */
+
+    @include katt-generate-spacing() {
+
+        .#{$katt-spacing-namespace}u-m0-#{$katt-generate-spacing-alias}      { margin:           0 !important; }
+        .#{$katt-spacing-namespace}u-mt0-#{$katt-generate-spacing-alias}     { margin-top:       0 !important; }
+        .#{$katt-spacing-namespace}u-mr0-#{$katt-generate-spacing-alias}     { margin-right:     0 !important; }
+        .#{$katt-spacing-namespace}u-mb0-#{$katt-generate-spacing-alias}     { margin-bottom:    0 !important; }
+        .#{$katt-spacing-namespace}u-ml0-#{$katt-generate-spacing-alias}     { margin-left:      0 !important; }
+        .#{$katt-spacing-namespace}u-mh0-#{$katt-generate-spacing-alias}     { margin-right:     0 !important; margin-left:      0 !important; }
+        .#{$katt-spacing-namespace}u-mv0-#{$katt-generate-spacing-alias}     { margin-top:       0 !important; margin-bottom:    0 !important; }
+
+    }
+
+}
+
+
+@if ($katt-enable-responsive-margins--negative == true) {
+
+    /**
+     * Negative margins.
+     */
+
+    @include katt-generate-spacing() {
+
+        .#{$katt-spacing-namespace}u-nm-#{$katt-generate-spacing-alias}      { margin:           -$katt-margin !important; }
+        .#{$katt-spacing-namespace}u-nmt-#{$katt-generate-spacing-alias}     { margin-top:       -$katt-margin !important; }
+        .#{$katt-spacing-namespace}u-nmr-#{$katt-generate-spacing-alias}     { margin-right:     -$katt-margin !important; }
+        .#{$katt-spacing-namespace}u-nmb-#{$katt-generate-spacing-alias}     { margin-bottom:    -$katt-margin !important; }
+        .#{$katt-spacing-namespace}u-nml-#{$katt-generate-spacing-alias}     { margin-left:      -$katt-margin !important; }
+        .#{$katt-spacing-namespace}u-nmh-#{$katt-generate-spacing-alias}     { margin-right:     -$katt-margin !important; margin-left:      -$katt-margin !important; }
+        .#{$katt-spacing-namespace}u-nmv-#{$katt-generate-spacing-alias}     { margin-top:       -$katt-margin !important; margin-bottom:    -$katt-margin !important; }
+
+    }
+
+}
+
+
+@if ($katt-enable-responsive-margins--negative-tiny == true) {
+
+    /**
+     * Tiny negative margins.
+     */
+
+    @include katt-generate-spacing() {
+
+        .#{$katt-spacing-namespace}u-nm\/4-#{$katt-generate-spacing-alias}    { margin:           -$katt-margin--tiny !important; }
+        .#{$katt-spacing-namespace}u-nmt\/4-#{$katt-generate-spacing-alias}   { margin-top:       -$katt-margin--tiny !important; }
+        .#{$katt-spacing-namespace}u-nmr\/4-#{$katt-generate-spacing-alias}   { margin-right:     -$katt-margin--tiny !important; }
+        .#{$katt-spacing-namespace}u-nmb\/4-#{$katt-generate-spacing-alias}   { margin-bottom:    -$katt-margin--tiny !important; }
+        .#{$katt-spacing-namespace}u-nml\/4-#{$katt-generate-spacing-alias}   { margin-left:      -$katt-margin--tiny !important; }
+        .#{$katt-spacing-namespace}u-nmh\/4-#{$katt-generate-spacing-alias}   { margin-right:     -$katt-margin--tiny !important; margin-left:     -$katt-margin--tiny !important; }
+        .#{$katt-spacing-namespace}u-nmv\/4-#{$katt-generate-spacing-alias}   { margin-top:       -$katt-margin--tiny !important; margin-bottom:   -$katt-margin--tiny !important; }
+
+    }
+
+}
+
+
+@if ($katt-enable-responsive-margins--negative-small == true) {
+
+    /**
+     * Small negative margins.
+     */
+
+    @include katt-generate-spacing() {
+
+        .#{$katt-spacing-namespace}u-nm\/2-#{$katt-generate-spacing-alias}     { margin:           -$katt-margin--small !important; }
+        .#{$katt-spacing-namespace}u-nmt\/2-#{$katt-generate-spacing-alias}    { margin-top:       -$katt-margin--small !important; }
+        .#{$katt-spacing-namespace}u-nmr\/2-#{$katt-generate-spacing-alias}    { margin-right:     -$katt-margin--small !important; }
+        .#{$katt-spacing-namespace}u-nmb\/2-#{$katt-generate-spacing-alias}    { margin-bottom:    -$katt-margin--small !important; }
+        .#{$katt-spacing-namespace}u-nml\/2-#{$katt-generate-spacing-alias}    { margin-left:      -$katt-margin--small !important; }
+        .#{$katt-spacing-namespace}u-nmh\/2-#{$katt-generate-spacing-alias}    { margin-right:     -$katt-margin--small !important; margin-left:   -$katt-margin--small !important; }
+        .#{$katt-spacing-namespace}u-nmv\/2-#{$katt-generate-spacing-alias}    { margin-top:       -$katt-margin--small !important; margin-bottom: -$katt-margin--small !important; }
+
+    }
+
+}
+
+
+@if ($katt-enable-responsive-margins--negative-large == true) {
+
+    /**
+     * Large negative margins.
+     */
+
+    @include katt-generate-spacing() {
+
+        .#{$katt-spacing-namespace}u-nm2-#{$katt-generate-spacing-alias}    { margin:           double(-$katt-margin) !important; }
+        .#{$katt-spacing-namespace}u-nmt2-#{$katt-generate-spacing-alias}   { margin-top:       double(-$katt-margin) !important; }
+        .#{$katt-spacing-namespace}u-nmr2-#{$katt-generate-spacing-alias}   { margin-right:     double(-$katt-margin) !important; }
+        .#{$katt-spacing-namespace}u-nmb2-#{$katt-generate-spacing-alias}   { margin-bottom:    double(-$katt-margin) !important; }
+        .#{$katt-spacing-namespace}u-nml2-#{$katt-generate-spacing-alias}   { margin-left:      double(-$katt-margin) !important; }
+        .#{$katt-spacing-namespace}u-nmh2-#{$katt-generate-spacing-alias}   { margin-right:     double(-$katt-margin) !important; margin-left:      double(-$katt-margin) !important; }
+        .#{$katt-spacing-namespace}u-nmv2-#{$katt-generate-spacing-alias}   { margin-top:       double(-$katt-margin) !important; margin-bottom:    double(-$katt-margin) !important; }
+
+    }
+
+}
+
+
+@if ($katt-enable-responsive-margins--negative-huge == true) {
+
+    /**
+     * Huge negative margins.
+     */
+
+    @include katt-generate-spacing() {
+
+        .#{$katt-spacing-namespace}u-nm4-#{$katt-generate-spacing-alias}  { margin:           quadruple(-$katt-margin) !important; }
+        .#{$katt-spacing-namespace}u-nmt4-#{$katt-generate-spacing-alias} { margin-top:       quadruple(-$katt-margin) !important; }
+        .#{$katt-spacing-namespace}u-nmr4-#{$katt-generate-spacing-alias} { margin-right:     quadruple(-$katt-margin) !important; }
+        .#{$katt-spacing-namespace}u-nmb4-#{$katt-generate-spacing-alias} { margin-bottom:    quadruple(-$katt-margin) !important; }
+        .#{$katt-spacing-namespace}u-nml4-#{$katt-generate-spacing-alias} { margin-left:      quadruple(-$katt-margin) !important; }
+        .#{$katt-spacing-namespace}u-nmh4-#{$katt-generate-spacing-alias} { margin-right:     quadruple(-$katt-margin) !important; margin-left:   quadruple(-$katt-margin) !important; }
+        .#{$katt-spacing-namespace}u-nmv4-#{$katt-generate-spacing-alias} { margin-top:       quadruple(-$katt-margin) !important; margin-bottom: quadruple(-$katt-margin) !important; }
+
+    }
+
+}
+
+
+
+
+
+@if ($katt-enable-responsive-paddings == true) {
+
+    /**
+     * Padding helper classes.
+     *
+     * Add paddings.
+     */
+
+    @include katt-generate-spacing() {
+
+        .#{$katt-spacing-namespace}u-p-#{$katt-generate-spacing-alias}       { padding:          $katt-padding !important; }
+        .#{$katt-spacing-namespace}u-pt-#{$katt-generate-spacing-alias}      { padding-top:      $katt-padding !important; }
+        .#{$katt-spacing-namespace}u-pr-#{$katt-generate-spacing-alias}      { padding-right:    $katt-padding !important; }
+        .#{$katt-spacing-namespace}u-pb-#{$katt-generate-spacing-alias}      { padding-bottom:   $katt-padding !important; }
+        .#{$katt-spacing-namespace}u-pl-#{$katt-generate-spacing-alias}      { padding-left:     $katt-padding !important; }
+        .#{$katt-spacing-namespace}u-ph-#{$katt-generate-spacing-alias}      { padding-right:    $katt-padding !important; padding-left:    $katt-padding !important; }
+        .#{$katt-spacing-namespace}u-pv-#{$katt-generate-spacing-alias}      { padding-top:      $katt-padding !important; padding-bottom:  $katt-padding !important; }
+
+    }
+
+}
+
+
+@if ($katt-enable-responsive-paddings--tiny == true) {
+
+    /**
+     * Add tiny paddings.
+     */
+
+    @include katt-generate-spacing() {
+
+        .#{$katt-spacing-namespace}u-p\/4-#{$katt-generate-spacing-alias}     { padding:           $katt-padding--tiny !important; }
+        .#{$katt-spacing-namespace}u-pt\/4-#{$katt-generate-spacing-alias}    { padding-top:       $katt-padding--tiny !important; }
+        .#{$katt-spacing-namespace}u-pr\/4-#{$katt-generate-spacing-alias}    { padding-right:     $katt-padding--tiny !important; }
+        .#{$katt-spacing-namespace}u-pb\/4-#{$katt-generate-spacing-alias}    { padding-bottom:    $katt-padding--tiny !important; }
+        .#{$katt-spacing-namespace}u-pl\/4-#{$katt-generate-spacing-alias}    { padding-left:      $katt-padding--tiny !important; }
+        .#{$katt-spacing-namespace}u-ph\/4-#{$katt-generate-spacing-alias}    { padding-right:     $katt-padding--tiny !important; padding-left:      $katt-padding--tiny !important; }
+        .#{$katt-spacing-namespace}u-pv\/4-#{$katt-generate-spacing-alias}    { padding-top:       $katt-padding--tiny !important; padding-bottom:    $katt-padding--tiny !important; }
+
+    }
+
+}
+
+
+@if ($katt-enable-responsive-paddings--small == true) {
+
+    /**
+     * Add small paddings.
+     */
+
+    @include katt-generate-spacing() {
+
+        .#{$katt-spacing-namespace}u-p\/2-#{$katt-generate-spacing-alias}      { padding:           $katt-padding--small !important; }
+        .#{$katt-spacing-namespace}u-pt\/2-#{$katt-generate-spacing-alias}     { padding-top:       $katt-padding--small !important; }
+        .#{$katt-spacing-namespace}u-pr\/2-#{$katt-generate-spacing-alias}     { padding-right:     $katt-padding--small !important; }
+        .#{$katt-spacing-namespace}u-pb\/2-#{$katt-generate-spacing-alias}     { padding-bottom:    $katt-padding--small !important; }
+        .#{$katt-spacing-namespace}u-pl\/2-#{$katt-generate-spacing-alias}     { padding-left:      $katt-padding--small !important; }
+        .#{$katt-spacing-namespace}u-ph\/2-#{$katt-generate-spacing-alias}     { padding-right:     $katt-padding--small !important; padding-left:    $katt-padding--small !important; }
+        .#{$katt-spacing-namespace}u-pv\/2-#{$katt-generate-spacing-alias}     { padding-top:       $katt-padding--small !important; padding-bottom:  $katt-padding--small !important; }
+
+    }
+
+}
+
+
+@if ($katt-enable-responsive-paddings--large == true) {
+
+    /**
+     * Add large paddings.
+     */
+
+    @include katt-generate-spacing() {
+
+        .#{$katt-spacing-namespace}u-p2-#{$katt-generate-spacing-alias}     { padding:           $katt-padding--large !important; }
+        .#{$katt-spacing-namespace}u-pt2-#{$katt-generate-spacing-alias}    { padding-top:       $katt-padding--large !important; }
+        .#{$katt-spacing-namespace}u-pr2-#{$katt-generate-spacing-alias}    { padding-right:     $katt-padding--large !important; }
+        .#{$katt-spacing-namespace}u-pb2-#{$katt-generate-spacing-alias}    { padding-bottom:    $katt-padding--large !important; }
+        .#{$katt-spacing-namespace}u-pl2-#{$katt-generate-spacing-alias}    { padding-left:      $katt-padding--large !important; }
+        .#{$katt-spacing-namespace}u-ph2-#{$katt-generate-spacing-alias}    { padding-right:     $katt-padding--large !important; padding-left:   $katt-padding--large !important; }
+        .#{$katt-spacing-namespace}u-pv2-#{$katt-generate-spacing-alias}    { padding-top:       $katt-padding--large !important; padding-bottom: $katt-padding--large !important; }
+
+    }
+
+}
+
+
+@if ($katt-enable-responsive-paddings--huge == true) {
+
+    /**
+     * Add huge paddings.
+     */
+
+    @include katt-generate-spacing() {
+
+        .#{$katt-spacing-namespace}u-p4-#{$katt-generate-spacing-alias}   { padding:           $katt-padding--huge !important; }
+        .#{$katt-spacing-namespace}u-pt4-#{$katt-generate-spacing-alias}  { padding-top:       $katt-padding--huge !important; }
+        .#{$katt-spacing-namespace}u-pr4-#{$katt-generate-spacing-alias}  { padding-right:     $katt-padding--huge !important; }
+        .#{$katt-spacing-namespace}u-pb4-#{$katt-generate-spacing-alias}  { padding-bottom:    $katt-padding--huge !important; }
+        .#{$katt-spacing-namespace}u-pl4-#{$katt-generate-spacing-alias}  { padding-left:      $katt-padding--huge !important; }
+        .#{$katt-spacing-namespace}u-ph4-#{$katt-generate-spacing-alias}  { padding-right:     $katt-padding--huge !important; padding-left:    $katt-padding--huge !important; }
+        .#{$katt-spacing-namespace}u-pv4-#{$katt-generate-spacing-alias}  { padding-top:       $katt-padding--huge !important; padding-bottom:  $katt-padding--huge !important; }
+
+    }
+
+}
+
+
+@if ($katt-enable-responsive-paddings--none == true) {
+
+    /**
+     * Remove paddings.
+     */
+
+    @include katt-generate-spacing() {
+
+        .#{$katt-spacing-namespace}u-p0-#{$katt-generate-spacing-alias}      { padding:          0 !important; }
+        .#{$katt-spacing-namespace}u-pt0-#{$katt-generate-spacing-alias}     { padding-top:      0 !important; }
+        .#{$katt-spacing-namespace}u-pr0-#{$katt-generate-spacing-alias}     { padding-right:    0 !important; }
+        .#{$katt-spacing-namespace}u-pb0-#{$katt-generate-spacing-alias}     { padding-bottom:   0 !important; }
+        .#{$katt-spacing-namespace}u-pl0-#{$katt-generate-spacing-alias}     { padding-left:     0 !important; }
+        .#{$katt-spacing-namespace}u-ph0-#{$katt-generate-spacing-alias}     { padding-right:    0 !important; padding-left:     0 !important; }
+        .#{$katt-spacing-namespace}u-pv0-#{$katt-generate-spacing-alias}     { padding-top:      0 !important; padding-bottom:   0 !important; }
+
+    }
+
+}
+
+}

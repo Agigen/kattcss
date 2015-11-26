@@ -1,0 +1,20 @@
+/*------------------------------------*\
+    Base - Lists
+\*------------------------------------*/
+
+/**
+ * Remove extra vertical spacing when nesting lists.
+ */
+
+@if ($katt-enable-module-base-lists == true) {
+
+li {
+
+    > ul,
+    > ol {
+        margin-bottom: 0;
+    }
+
+}
+
+}

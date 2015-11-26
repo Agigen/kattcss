@@ -1,0 +1,66 @@
+/*------------------------------------*\
+    Settings - Spacing
+\*------------------------------------*/
+
+/**
+ * Sourced from Inuitcss (https://github.com/inuitcss), Copyright 2014 Harry Roberts
+ */
+
+$katt-spacing-namespace:               $katt-namespace !default;
+
+$katt-margin:                          $katt-base-spacing-unit !default;
+$katt-margin--small:                       halve($katt-margin) !default;
+$katt-margin--tiny:                      quarter($katt-margin) !default;
+$katt-margin--large:                      double($katt-margin) !default;
+$katt-margin--huge:                    quadruple($katt-margin) !default;
+
+$katt-padding:                         $katt-base-spacing-unit !default;
+$katt-padding--small:                      halve($katt-padding) !default;
+$katt-padding--tiny:                     quarter($katt-padding) !default;
+$katt-padding--large:                     double($katt-padding) !default;
+$katt-padding--huge:                   quadruple($katt-padding) !default;
+
+$katt-enable-margins:                  false !default;
+$katt-enable-margins--tiny:            false !default;
+$katt-enable-margins--small:           false !default;
+$katt-enable-margins--large:           false !default;
+$katt-enable-margins--huge:            false !default;
+
+$katt-enable-margins--negative:        false !default;
+$katt-enable-margins--negative-tiny:   false !default;
+$katt-enable-margins--negative-small:  false !default;
+$katt-enable-margins--negative-large:  false !default;
+$katt-enable-margins--negative-huge:   false !default;
+
+$katt-enable-margins--none:            false !default;
+
+$katt-enable-paddings:                 false !default;
+$katt-enable-paddings--tiny:           false !default;
+$katt-enable-paddings--small:          false !default;
+$katt-enable-paddings--large:          false !default;
+$katt-enable-paddings--huge:           false !default;
+
+$katt-enable-paddings--none:           false !default;
+
+// Responsive margins and paddings
+$katt-enable-responsive-margins:                   false !default;
+$katt-enable-responsive-margins--tiny:             false !default;
+$katt-enable-responsive-margins--small:            false !default;
+$katt-enable-responsive-margins--large:            false !default;
+$katt-enable-responsive-margins--huge:             false !default;
+
+$katt-enable-responsive-margins--negative:         false !default;
+$katt-enable-responsive-margins--negative-tiny:    false !default;
+$katt-enable-responsive-margins--negative-small:   false !default;
+$katt-enable-responsive-margins--negative-large:   false !default;
+$katt-enable-responsive-margins--negative-huge:    false !default;
+
+$katt-enable-responsive-margins--none:             false !default;
+
+$katt-enable-responsive-paddings:                  false !default;
+$katt-enable-responsive-paddings--tiny:            false !default;
+$katt-enable-responsive-paddings--small:           false !default;
+$katt-enable-responsive-paddings--large:           false !default;
+$katt-enable-responsive-paddings--huge:            false !default;
+
+$katt-enable-responsive-paddings--none:            false !default;

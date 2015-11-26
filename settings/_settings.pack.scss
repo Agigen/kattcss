@@ -1,0 +1,20 @@
+/*------------------------------------*\
+    Settings - Pack
+\*------------------------------------*/
+
+$katt-pack-namespace:      $katt-namespace !default;
+
+$katt-pack-gutter:         $katt-base-spacing-unit !default;
+$katt-pack-gutter--tiny:     quarter($katt-pack-gutter) !default;
+$katt-pack-gutter--small:      halve($katt-pack-gutter) !default;
+$katt-pack-gutter--large:     double($katt-pack-gutter) !default;
+$katt-pack-gutter--huge:   quadruple($katt-pack-gutter) !default;
+
+$katt-enable-pack--auto:   false !default;
+$katt-enable-pack--tiny:   false !default;
+$katt-enable-pack--small:  false !default;
+$katt-enable-pack--large:  false !default;
+$katt-enable-pack--huge:   false !default;
+$katt-enable-pack--rev:    false !default;
+$katt-enable-pack--middle: false !default;
+$katt-enable-pack--bottom: false !default;

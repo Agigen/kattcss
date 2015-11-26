@@ -1,0 +1,15 @@
+{
+  "name": "kattcss",
+  "version": "0.1.0",
+  "authors": [
+    "Oscar Ekholm <oscar.ekholm@agigen.se>"
+  ],
+  "description": "A CSS framework built upon and extending inuitcss",
+  "keywords": [
+    "kattcss",
+    "inuitcss",
+    "oocss",
+    "css"
+  ],
+  "license": "Apache-2.0"
+}

@@ -1,0 +1,16 @@
+/*------------------------------------*\
+    Settings - List-Block
+\*------------------------------------*/
+
+$katt-list-block-namespace:        $katt-namespace !default;
+
+$katt-list-block-padding:          $katt-base-spacing-unit !default;
+$katt-list-block-padding--tiny:      quarter($katt-list-block-padding) !default;
+$katt-list-block-padding--small:       halve($katt-list-block-padding) !default;
+$katt-list-block-padding--large:      double($katt-list-block-padding) !default;
+$katt-list-block-padding--huge:    quadruple($katt-list-block-padding) !default;
+
+$katt-enable-list-block--tiny:     false !default;
+$katt-enable-list-block--small:    false !default;
+$katt-enable-list-block--large:    false !default;
+$katt-enable-list-block--huge:     false !default;

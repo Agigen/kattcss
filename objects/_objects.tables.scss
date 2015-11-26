@@ -1,0 +1,176 @@
+/*------------------------------------*\
+    Objects - Tables
+\*------------------------------------*/
+
+/**
+ * Sourced from Inuitcss (https://github.com/inuitcss), Copyright 2014 Harry Roberts
+ */
+
+@if ($katt-enable-module-objects-tables == true) {
+
+.#{$katt-table-namespace}table,
+%#{$katt-table-namespace}table {
+    width: 100%;
+}
+
+
+@if ($katt-enable-table--fixed == true) {
+
+    /**
+     * Force tables into having equal-width columns.
+     */
+    .#{$katt-table-namespace}table--fixed,
+    %#{$katt-table-namespace}table--fixed {
+        table-layout: fixed;
+    }
+
+}
+
+
+
+
+
+@if ($katt-enable-table--compact == true) {
+
+    /**
+     * Tables with very tightly packed cells.
+     */
+    .#{$katt-table-namespace}table--compact,
+    %#{$katt-table-namespace}table--compact {
+    
+        th,
+        td {
+            padding: $katt-table-padding--compact;
+        }
+    
+    }
+
+}
+
+
+
+
+
+@if ($katt-enable-table--cosy == true) {
+
+    /**
+     * Lightly packed cells.
+     */
+    .#{$katt-table-namespace}table--cosy,
+    %#{$katt-table-namespace}table--cosy {
+    
+        th,
+        td {
+            padding: $katt-table-padding--cosy;
+        }
+    
+    }
+
+}
+
+
+
+
+
+@if ($katt-enable-table--comfy == true) {
+
+    /**
+     * Tables with very widely padded cells.
+     */
+    .#{$katt-table-namespace}table--comfy,
+    %#{$katt-table-namespace}table--comfy {
+    
+        th,
+        td {
+            padding: $katt-table-padding--comfy;
+        }
+    
+    }
+
+}
+
+
+
+
+
+@if ($katt-enable-table--cells == true) {
+
+    /**
+     * Add borders around a `table`.
+     */
+    .#{$katt-table-namespace}table--cells,
+    %#{$katt-table-namespace}table--cells {
+    
+        th,
+        td {
+            border: $katt-table-border-width $katt-table-border-style $katt-table-border-color;
+        }
+    
+    }
+
+}
+
+
+
+
+
+@if ($katt-enable-table--rows == true) {
+
+    /**
+     * Add borders only to `table`’s rows.
+     */
+    .#{$katt-table-namespace}table--rows,
+    %#{$katt-table-namespace}table--rows {
+    
+        &,
+        th,
+        td {
+            border: 0 $katt-table-border-style $katt-table-border-color;
+        }
+    
+    }
+    
+    .#{$katt-table-namespace}table--rows,
+    %#{$katt-table-namespace}table--rows {
+        border-top-width: $katt-table-border-width;
+    
+        th,
+        td {
+            border-bottom-width: $katt-table-border-width;
+        }
+    }
+
+}
+
+
+
+
+
+@if ($katt-enable-table--columns == true) {
+
+    /**
+     * Add borders only to `table`’s columns.
+     */
+    .#{$katt-table-namespace}table--columns,
+    %#{$katt-table-namespace}table--columns {
+    
+        &,
+        th,
+        td {
+            border: 0 $katt-table-border-style $katt-table-border-color;
+        }
+    }
+    
+    .#{$katt-table-namespace}table--columns,
+    %#{$katt-table-namespace}table--columns {
+        border-left-width: $katt-table-border-width;
+    
+        th,
+        td {
+            border-right-width: $katt-table-border-width;
+        }
+    }
+
+}
+
+}

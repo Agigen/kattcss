@@ -1,0 +1,398 @@
+/*------------------------------------*\
+    Vars
+\*------------------------------------*/
+
+/**
+ * A simple index of all variables that are used in kattcss.
+ * Copy the variables you wish to change into your project.
+ *
+ * Everything is wrapped in an if statement that's impossible to enter to
+ * make sure nothing from this file is ever included.
+ */
+
+@if (false) {
+
+/*------------------------------------*\
+    Settings - Default
+\*------------------------------------*/
+
+// High-level base settings.
+$katt-base-font-size:          16px;
+$katt-base-line-height:        24px;
+$katt-base-text-color:         #333;
+$katt-base-background-color:   #fff;
+
+// Namespace.
+//
+// Would you like kattcss’ classes to be prepended with a namespace? If so,
+// define it here.
+$katt-namespace:               null;
+
+$breakpoints: (
+    "palm"          "screen and (max-width: 44.9375em)",
+    "lap"           "screen and (min-width: 45em) and (max-width: 63.9375em)",
+    "lap-and-up"    "screen and (min-width: 45em)",
+    "portable"      "screen and (max-width: 63.9375em)",
+    "desk"          "screen and (min-width: 64em)",
+    "retina"        "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)"
+);
+
+/*------------------------------------*\
+    Settings - Modules
+\*------------------------------------*/
+
+$katt-enable-module-generic-normalize:  true;
+$katt-enable-module-generic-reset:      true;
+$katt-enable-module-generic-shared:     true;
+$katt-enable-module-base-headings:      true;
+$katt-enable-module-base-page:          true;
+$katt-enable-module-objects-buttons:    true;
+$katt-enable-module-objects-layout:     true;
+$katt-enable-module-trumps-clearfix:    true;
+$katt-enable-module-trumps-heading:     true;
+$katt-enable-module-trumps-widths:      true;
+$katt-enable-module-trumps-show-hide:   true;
+
+/*------------------------------------*\
+    Settings - Headings
+\*------------------------------------*/
+
+$katt-heading-size-1:  36px;
+$katt-heading-size-2:  30px;
+$katt-heading-size-3:  24px;
+$katt-heading-size-4:  20px;
+$katt-heading-size-5:  16px;
+$katt-heading-size-6:  14px;
+
+/*------------------------------------*\
+    Settings - Buttons
+\*------------------------------------*/
+
+$katt-btn-namespace:       $katt-namespace;
+
+$katt-btn-padding:         halve($katt-base-spacing-unit);
+$katt-btn-padding--small:  halve($katt-btn-padding);
+$katt-btn-padding--large:  double($katt-btn-padding);
+$katt-btn-background:      #4a8ec2;
+$katt-btn-color:           #fff;
+$katt-btn-border-width:    1px;
+$katt-btn-border-style:    solid;
+$katt-btn-border-color:    $katt-btn-background;
+$katt-btn-radius:          0;
+
+$katt-enable-btn--small:   false;
+$katt-enable-btn--large:   false;
+$katt-enable-btn--full:    false;
+$katt-enable-btn--pill:    false;
+
+/*------------------------------------*\
+    Settings - Layout
+\*------------------------------------*/
+
+$katt-layout-namespace:        $katt-namespace;
+
+$katt-layout-gutter:           $katt-base-spacing-unit;
+$katt-layout-gutter--tiny:       quarter($katt-layout-gutter);
+$katt-layout-gutter--small:        halve($katt-layout-gutter);
+$katt-layout-gutter--large:       double($katt-layout-gutter);
+$katt-layout-gutter--huge:     quadruple($katt-layout-gutter);
+
+$katt-enable-layout--tiny:     false;
+$katt-enable-layout--small:    false;
+$katt-enable-layout--large:    false;
+$katt-enable-layout--huge:     false;
+$katt-enable-layout--flush:    false;
+$katt-enable-layout--rev:      false;
+$katt-enable-layout--middle:   false;
+$katt-enable-layout--bottom:   false;
+$katt-enable-layout--right:    false;
+$katt-enable-layout--center:   false;
+$katt-enable-layout--auto:     false;
+
+/*------------------------------------*\
+    Settings - Widths
+\*------------------------------------*/
+
+$katt-widths-namespace: $katt-namespace;
+
+// Do we want to use classes like `<div class="u-1/4">` instead of
+// `<div class="u-1-of-4">`?
+$katt-use-fractions: true;
+
+
+// By default we will create wholes, halves, thirds, quarters, and fifths.
+// Predefine this Map to override.
+$katt-widths-columns: (
+    1,
+    2,
+    3,
+    4,
+    5,
+);
+
+
+$katt-widths-columns-responsive: (
+    1,
+    2,
+    3,
+    4,
+    5,
+);
+
+/*------------------------------------*\
+    Settings - Spacing
+\*------------------------------------*/
+
+$katt-spacing-namespace:               $katt-namespace;
+
+$katt-margin:                          $katt-base-spacing-unit;
+$katt-margin--small:                       halve($katt-margin);
+$katt-margin--tiny:                      quarter($katt-margin);
+$katt-margin--large:                      double($katt-margin);
+$katt-margin--huge:                    quadruple($katt-margin);
+
+$katt-padding:                         $katt-base-spacing-unit;
+$katt-padding--small:                      halve($katt-padding);
+$katt-padding--tiny:                     quarter($katt-padding);
+$katt-padding--large:                     double($katt-padding);
+$katt-padding--huge:                   quadruple($katt-padding);
+
+$katt-enable-margins:                  false;
+$katt-enable-margins--tiny:            false;
+$katt-enable-margins--small:           false;
+$katt-enable-margins--large:           false;
+$katt-enable-margins--huge:            false;
+
+$katt-enable-margins--negative:        false;
+$katt-enable-margins--negative-tiny:   false;
+$katt-enable-margins--negative-small:  false;
+$katt-enable-margins--negative-large:  false;
+$katt-enable-margins--negative-huge:   false;
+
+$katt-enable-margins--none:            false;
+
+$katt-enable-paddings:                 false;
+$katt-enable-paddings--tiny:           false;
+$katt-enable-paddings--small:          false;
+$katt-enable-paddings--large:          false;
+$katt-enable-paddings--huge:           false;
+
+$katt-enable-paddings--none:           false;
+
+// Responsive margins and paddings
+$katt-enable-responsive-margins:                   false;
+$katt-enable-responsive-margins--tiny:             false;
+$katt-enable-responsive-margins--small:            false;
+$katt-enable-responsive-margins--large:            false;
+$katt-enable-responsive-margins--huge:             false;
+
+$katt-enable-responsive-margins--negative:         false;
+$katt-enable-responsive-margins--negative-tiny:    false;
+$katt-enable-responsive-margins--negative-small:   false;
+$katt-enable-responsive-margins--negative-large:   false;
+$katt-enable-responsive-margins--negative-huge:    false;
+
+$katt-enable-responsive-margins--none:             false;
+
+$katt-enable-responsive-paddings:                  false;
+$katt-enable-responsive-paddings--tiny:            false;
+$katt-enable-responsive-paddings--small:           false;
+$katt-enable-responsive-paddings--large:           false;
+$katt-enable-responsive-paddings--huge:            false;
+
+$katt-enable-responsive-paddings--none:            false;
+
+
+/*------------------------------------*\
+    Settings - Show-Hide
+\*------------------------------------*/
+$katt-show-hide-namespace:                      $katt-namespace;
+$katt-enable-show-hide-hidden:                  false;
+$katt-enable-show-hide-visible:                 false;
+$katt-enable-show-hide-hidden--accessibility:   false;
+$katt-enable-show-hide-invisible:               false;
+
+/*------------------------------------*\
+    Settings - Block
+\*------------------------------------*/
+
+$katt-block-namespace:     $katt-namespace;
+
+$katt-block-gutter:            $katt-base-spacing-unit;
+$katt-block-gutter--tiny:        quarter($katt-block-gutter);
+$katt-block-gutter--small:         halve($katt-block-gutter);
+$katt-block-gutter--large:        double($katt-block-gutter);
+$katt-block-gutter--huge:      quadruple($katt-block-gutter);
+
+$katt-enable-block--flush:     false;
+$katt-enable-block--tiny:      false;
+$katt-enable-block--small:     false;
+$katt-enable-block--large:     false;
+$katt-enable-block--huge:      false;
+$katt-enable-block--center:    false;
+$katt-enable-block--right:     false;
+
+/*------------------------------------*\
+    Settings - Box
+\*------------------------------------*/
+
+$katt-box-namespace:       $katt-namespace;
+
+$katt-box-padding:         $katt-base-spacing-unit;
+$katt-box-padding--tiny:     quarter($katt-box-padding);
+$katt-box-padding--small:      halve($katt-box-padding);
+$katt-box-padding--large:     double($katt-box-padding);
+$katt-box-padding--huge:   quadruple($katt-box-padding);
+
+$katt-enable-box--flush:   false;
+$katt-enable-box--tiny:    false;
+$katt-enable-box--small:   false;
+$katt-enable-box--large:   false;
+$katt-enable-box--huge:    false;
+
+/*------------------------------------*\
+    Settings - Flag
+\*------------------------------------*/
+
+$katt-flag-namespace:          $katt-namespace;
+
+$katt-flag-gutter:             $katt-base-spacing-unit;
+$katt-flag-gutter--tiny:         quarter($katt-flag-gutter);
+$katt-flag-gutter--small:          halve($katt-flag-gutter);
+$katt-flag-gutter--large:         double($katt-flag-gutter);
+$katt-flag-gutter--huge:       quadruple($katt-flag-gutter);
+
+$katt-enable-flag--tiny:       false;
+$katt-enable-flag--small:      false;
+$katt-enable-flag--large:      false;
+$katt-enable-flag--huge:       false;
+$katt-enable-flag--rev:        false;
+$katt-enable-flag--flush:      false;
+$katt-enable-flag--top:        false;
+$katt-enable-flag--bottom:     false;
+$katt-enable-flag--responsive: false;
+$katt-flag-collapse-at:        720px;
+
+/*------------------------------------*\
+    Settings - List-Bare
+\*------------------------------------*/
+
+$katt-list-bare-namespace: $katt-namespace;
+
+/*------------------------------------*\
+    Settings - List-Block
+\*------------------------------------*/
+
+$katt-list-block-namespace:        $katt-namespace;
+
+$katt-list-block-padding:          $katt-base-spacing-unit;
+$katt-list-block-padding--tiny:      quarter($katt-list-block-padding);
+$katt-list-block-padding--small:       halve($katt-list-block-padding);
+$katt-list-block-padding--large:      double($katt-list-block-padding);
+$katt-list-block-padding--huge:    quadruple($katt-list-block-padding);
+
+$katt-enable-list-block--tiny:     false;
+$katt-enable-list-block--small:    false;
+$katt-enable-list-block--large:    false;
+$katt-enable-list-block--huge:     false;
+
+/*------------------------------------*\
+    Settings - List-Inline
+\*------------------------------------*/
+
+$katt-list-inline-namespace:           $katt-namespace;
+
+$katt-enable-list-inline--delimited:   false;
+$katt-list-inline-delimit-character:   ",\00A0";
+
+/*------------------------------------*\
+    Settings - List-UI
+\*------------------------------------*/
+
+$katt-list-ui-namespace:       $katt-namespace;
+
+$katt-list-ui-padding:         $katt-base-spacing-unit;
+$katt-list-ui-padding--tiny:     quarter($katt-list-ui-padding);
+$katt-list-ui-padding--small:      halve($katt-list-ui-padding);
+$katt-list-ui-padding--large:     double($katt-list-ui-padding);
+$katt-list-ui-padding--huge:   quadruple($katt-list-ui-padding);
+
+$katt-list-ui-border-width:    1px;
+$katt-list-ui-border-style:    solid;
+$katt-list-ui-border-color:    #ccc;
+
+$katt-enable-list-ui--tiny:    false;
+$katt-enable-list-ui--small:   false;
+$katt-enable-list-ui--large:   false;
+$katt-enable-list-ui--huge:    false;
+
+/*------------------------------------*\
+    Settings - Media
+\*------------------------------------*/
+
+$katt-media-namespace:             $katt-namespace;
+
+$katt-media-gutter:                $katt-base-spacing-unit;
+$katt-media-gutter--tiny:            quarter($katt-media-gutter);
+$katt-media-gutter--small:             halve($katt-media-gutter);
+$katt-media-gutter--large:            double($katt-media-gutter);
+$katt-media-gutter--huge:          quadruple($katt-media-gutter);
+
+$katt-enable-media--tiny:          false;
+$katt-enable-media--small:         false;
+$katt-enable-media--large:         false;
+$katt-enable-media--huge:          false;
+$katt-enable-media--rev:           false;
+$katt-enable-media--flush:         false;
+$katt-enable-media--responsive:    false;
+$katt-media-collapse-at:           720px;
+
+/*------------------------------------*\
+    Settings - Pack
+\*------------------------------------*/
+
+$katt-pack-namespace:      $katt-namespace;
+
+$katt-pack-gutter:         $katt-base-spacing-unit;
+$katt-pack-gutter--tiny:     quarter($katt-pack-gutter);
+$katt-pack-gutter--small:      halve($katt-pack-gutter);
+$katt-pack-gutter--large:     double($katt-pack-gutter);
+$katt-pack-gutter--huge:   quadruple($katt-pack-gutter);
+
+$katt-enable-pack--auto:   false;
+$katt-enable-pack--tiny:   false;
+$katt-enable-pack--small:  false;
+$katt-enable-pack--large:  false;
+$katt-enable-pack--huge:   false;
+$katt-enable-pack--rev:    false;
+$katt-enable-pack--middle: false;
+$katt-enable-pack--bottom: false;
+
+/*------------------------------------*\
+    Settings - Tables
+\*------------------------------------*/
+
+$katt-table-namespace:         $katt-namespace;
+
+$katt-table-padding--compact:  quarter($katt-base-spacing-unit);
+$katt-table-padding--cosy:     halve($katt-base-spacing-unit);
+$katt-table-padding--comfy:    $katt-base-spacing-unit;
+
+$katt-table-border-width:      1px;
+$katt-table-border-style:      solid;
+$katt-table-border-color:      #ccc;
+
+$katt-enable-table--fixed:     false;
+$katt-enable-table--compact:   false;
+$katt-enable-table--cosy:      false;
+$katt-enable-table--comfy:     false;
+$katt-enable-table--cells:     false;
+$katt-enable-table--rows:      false;
+$katt-enable-table--columns:   false;
+
+/*------------------------------------*\
+    Settings - Tabs
+\*------------------------------------*/
+
+$katt-tabs-namespace: $katt-namespace;
+}

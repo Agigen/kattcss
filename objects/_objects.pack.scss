@@ -1,0 +1,158 @@
+/*------------------------------------*\
+    Objects - Pack
+\*------------------------------------*/
+
+/**
+ * Sourced from Inuitcss (https://github.com/inuitcss), Copyright 2014 Harry Roberts
+ */
+
+/**
+ * The pack object simply causes any number of elements pack up horizontally to
+ * automatically fill an equal, fluid width of their parent.
+ */
+
+@if ($katt-enable-module-objects-pack == true) {
+
+/**
+ * 1. Fill all available space.
+ * 2. Cause children to be automatically equally sized.
+ */
+.#{$katt-pack-namespace}pack,
+%#{$katt-pack-namespace}pack {
+    width: 100%; /* [1] */
+    display: table;
+    table-layout: fixed; /* [2] */
+}
+
+    /**
+     * Cause children to adopt table-like structure.
+     */
+    .#{$katt-pack-namespace}pack__item,
+    %#{$katt-pack-namespace}pack__item {
+        display: table-cell;
+
+        @if ($katt-enable-pack--middle == true) {
+
+            /**
+             * All items are aligned to the middles of each other.
+             */
+
+            .#{$katt-pack-namespace}pack--middle > &,
+            %#{$katt-pack-namespace}pack--middle > & {
+                vertical-align: middle;
+            }
+
+        }
+
+        @if ($katt-enable-pack--bottom == true) {
+
+            /**
+             * All items are aligned to the bottoms of each other.
+             */
+
+            .#{$katt-pack-namespace}pack--bottom > &,
+            %#{$katt-pack-namespace}pack--bottom > & {
+                vertical-align: bottom;
+            }
+
+        }
+
+    }
+
+
+
+
+
+@if ($katt-enable-pack--auto == true) {
+
+    /**
+     * Cause children to pack up into available space, but not equally sized.
+     */
+
+    .#{$katt-pack-namespace}pack--auto,
+    %#{$katt-pack-namespace}pack--auto {
+        table-layout: auto;
+    }
+
+}
+
+
+
+
+
+@if ($katt-enable-pack--tiny == true) {
+
+    /**
+     * Tiny gutters between items.
+     */
+
+    .#{$katt-pack-namespace}pack--tiny,
+    %#{$katt-pack-namespace}pack--tiny {
+        border-spacing: $katt-pack-gutter--tiny;
+    }
+
+}
+
+@if ($katt-enable-pack--small == true) {
+
+    /**
+     * Small gutters between items.
+     */
+
+    .#{$katt-pack-namespace}pack--small,
+    %#{$katt-pack-namespace}pack--small {
+        border-spacing: $katt-pack-gutter--small;
+    }
+
+}
+
+@if ($katt-enable-pack--large == true) {
+
+    /**
+     * Large gutters between items.
+     */
+
+    .#{$katt-pack-namespace}pack--large,
+    %#{$katt-pack-namespace}pack--large {
+        border-spacing: $katt-pack-gutter--large;
+    }
+
+}
+
+@if ($katt-enable-pack--huge == true) {
+
+    /**
+     * Huge gutters between items.
+     */
+
+    .#{$katt-pack-namespace}pack--huge,
+    %#{$katt-pack-namespace}pack--huge {
+        border-spacing: $katt-pack-gutter--huge;
+    }
+
+}
+
+
+
+
+
+@if ($katt-enable-pack--rev == true) {
+
+    /**
+     * Reversed order packs.
+     */
+    
+    .#{$katt-pack-namespace}pack--rev,
+    %#{$katt-pack-namespace}pack--rev {
+        direction: rtl;
+    
+        > .#{$katt-pack-namespace}pack__item,
+        > %#{$katt-pack-namespace}pack__item {
+            direction: ltr;
+        }
+    
+    }
+
+}
+
+}

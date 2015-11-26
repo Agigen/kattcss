@@ -1,0 +1,23 @@
+/*------------------------------------*\
+    Settings - Flag
+\*------------------------------------*/
+
+$katt-flag-namespace:          $katt-namespace !default;
+
+$katt-flag-gutter:             $katt-base-spacing-unit !default;
+$katt-flag-gutter--tiny:         quarter($katt-flag-gutter) !default;
+$katt-flag-gutter--small:          halve($katt-flag-gutter) !default;
+$katt-flag-gutter--large:         double($katt-flag-gutter) !default;
+$katt-flag-gutter--huge:       quadruple($katt-flag-gutter) !default;
+
+$katt-enable-flag--tiny:       false !default;
+$katt-enable-flag--small:      false !default;
+$katt-enable-flag--large:      false !default;
+$katt-enable-flag--huge:       false !default;
+$katt-enable-flag--rev:        false !default;
+$katt-enable-flag--flush:      false !default;
+$katt-enable-flag--top:        false !default;
+$katt-enable-flag--bottom:     false !default;
+$katt-enable-flag--responsive: false !default;
+$katt-flag-collapse-at:        720px !default;
+

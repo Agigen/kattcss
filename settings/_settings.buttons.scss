@@ -1,0 +1,25 @@
+/*------------------------------------*\
+    Settings - Buttons
+\*------------------------------------*/
+
+/**
+ * Sourced from Inuitcss (https://github.com/inuitcss), Copyright 2014 Harry Roberts
+ */
+
+// Predefine the variables below in order to alter and enable specific features.
+$katt-btn-namespace:       $katt-namespace !default;
+
+$katt-btn-padding:         halve($katt-base-spacing-unit) !default;
+$katt-btn-padding--small:  halve($katt-btn-padding) !default;
+$katt-btn-padding--large:  double($katt-btn-padding) !default;
+$katt-btn-background:      #4a8ec2 !default;
+$katt-btn-color:           #fff !default;
+$katt-btn-border-width:    1px !default;
+$katt-btn-border-style:    solid !default;
+$katt-btn-border-color:    $katt-btn-background !default;
+$katt-btn-radius:          0 !default;
+
+$katt-enable-btn--small:   false !default;
+$katt-enable-btn--large:   false !default;
+$katt-enable-btn--full:    false !default;
+$katt-enable-btn--pill:    false !default;

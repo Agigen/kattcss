@@ -1,0 +1,52 @@
+/*------------------------------------*\
+    Trumps - Headings
+\*------------------------------------*/
+
+/**
+ * Sourced from Inuitcss (https://github.com/inuitcss), Copyright 2014 Harry Roberts
+ */
+
+/**
+ * Headings 1–6’s corresponding Greek-alphabet abstract classes for double-
+ * stranded heading hierarchy: csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
+ *
+ * Use these helper classes to cause other elements to adopt the styling of the
+ * respective heading, e.g.:
+ *
+   <h2 class="alpha">Lorem ipsum</h2>
+ *
+ */
+
+@if ($katt-enable-module-trumps-heading == true) {
+
+.#{$katt-namespace}alpha,
+%#{$katt-namespace}alpha {
+    @include katt-font-size($katt-heading-size-1);
+}
+
+.#{$katt-namespace}beta,
+%#{$katt-namespace}beta {
+    @include katt-font-size($katt-heading-size-2);
+}
+
+.#{$katt-namespace}gamma,
+%#{$katt-namespace}gamma {
+    @include katt-font-size($katt-heading-size-3);
+}
+
+.#{$katt-namespace}delta,
+%#{$katt-namespace}delta {
+    @include katt-font-size($katt-heading-size-4);
+}
+
+.#{$katt-namespace}epsilon,
+%#{$katt-namespace}epsilon {
+    @include katt-font-size($katt-heading-size-5);
+}
+
+.#{$katt-namespace}zeta,
+%#{$katt-namespace}zeta {
+    @include katt-font-size($katt-heading-size-6);
+}
+
+}

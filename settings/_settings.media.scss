@@ -1,0 +1,20 @@
+/*------------------------------------*\
+    Settings - Media
+\*------------------------------------*/
+
+$katt-media-namespace:             $katt-namespace !default;
+
+$katt-media-gutter:                $katt-base-spacing-unit !default;
+$katt-media-gutter--tiny:            quarter($katt-media-gutter) !default;
+$katt-media-gutter--small:             halve($katt-media-gutter) !default;
+$katt-media-gutter--large:            double($katt-media-gutter) !default;
+$katt-media-gutter--huge:          quadruple($katt-media-gutter) !default;
+
+$katt-enable-media--tiny:          false !default;
+$katt-enable-media--small:         false !default;
+$katt-enable-media--large:         false !default;
+$katt-enable-media--huge:          false !default;
+$katt-enable-media--rev:           false !default;
+$katt-enable-media--flush:         false !default;
+$katt-enable-media--responsive:    false !default;
+$katt-media-collapse-at:           720px !default;

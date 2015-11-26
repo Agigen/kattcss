@@ -1,0 +1,54 @@
+kattcss is a fork and extension of inuitcss
+
+-----------------------------------
+
+License for kattcss:
+
+Copyright 2014 Agile Generation AB
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+-----------------------------------
+
+License for inuitcss:
+
+Copyright 2014 Harry Roberts
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+------
+
+Significant changes made to inuitcss:
+ - All references to Inuitcss are removed
+ - All variables, mixins and class names prefix with inuit are prefixed with
+ - Inuitcss repositories collected into one single repository
+ - Consistent placement of responsive suffixes and prefixes
+ - Keep both responsive and non-responsive classes in the same files
+ - Made it possible to toggle modules not only through includes but also through variables
+ - Always use box-sizing: border-box;
+ - Responsive settings and tools included by default
+ - Added collections to make it easier for developers to get up-and-running with the essentials
+ - Added an index of all variables
+ - Collected all variables into settings files instead of putting them into each module's file
+ - Prefixed utility helper classes with u-
+ - Prefixed object classes with o-

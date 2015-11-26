@@ -1,0 +1,98 @@
+/*------------------------------------*\
+    Trumps - Show-Hide
+\*------------------------------------*/
+
+/**
+ * Helpers for showing or hiding elements completely
+ *
+ * u-hidden-$breakpoint
+ *      Hides an element completely in specified breakpoint
+ *
+ * u-visible-$breakpoint
+ *      Renders an element visible in only the specified breakpoint
+ *
+ * u-invisible-$breakpoint
+ *      Hides an element visually but maintains its layout and positioning
+ *
+ * u-accessibility[-$breakpoint]
+ * u-visuallyhidden[-$breakpoint]
+ *      Hides an element visually, but keeps it available for screenreaders
+ */
+
+@if ($katt-enable-module-trumps-show-hide) {
+
+@each $breakpoint in $breakpoints {
+
+    // Get the name of the breakpoint.
+    $alias: nth($breakpoint, 1);
+
+    @if ($katt-enable-show-hide-hidden == true) {
+
+        @include media-query($alias) {
+
+            .#{$katt-show-hide-namespace}u-hidden-#{$alias} {
+                display: none !important;
+            }
+
+        }
+
+    }
+
+    @if ($katt-enable-show-hide-visible == true) {
+
+        .#{$katt-show-hide-namespace}u-visible-#{$alias} {
+            display: none !important;
+
+            @include media-query($alias) {
+                display: block !important;
+            }
+        }
+
+    }
+
+    @if ($katt-enable-show-hide-invisible== true) {
+
+        @include media-query($alias) {
+
+            .#{$katt-show-hide-namespace}u-invisible-#{$alias} {
+                visibility: hidden !important;
+            }
+
+        }
+
+    }
+
+    @if ($katt-enable-show-hide-hidden--accessibility == true) {
+
+        /**
+         * Hide only visually, but have it available for screenreaders:
+         * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+         */
+        @include media-query($alias) {
+
+            .#{$katt-show-hide-namespace}u-accessibility-#{$alias},
+            .#{$katt-show-hide-namespace}u-visuallyhidden-#{$alias} {
+                @include accessibility-visuallyhidden;
+            }
+
+        }
+
+    }
+
+}
+
+
+@if ($katt-enable-show-hide-hidden--accessibility == true) {
+
+    /**
+     * Also add accessibility and visuallyhidden classes without
+     * responsive aliases.
+     */
+    .#{$katt-show-hide-namespace}u-accessibility,
+    .#{$katt-show-hide-namespace}u-visuallyhidden{
+        @include accessibility-visuallyhidden;
+    }
+
+}
+
+}

@@ -1,0 +1,34 @@
+/*------------------------------------*\
+    #SETTINGS-MODULES
+\*------------------------------------*/
+
+/**
+ * Contains variables defining which modules of kattcss to enable
+ */
+
+$katt-enable-module-generic-normalize:                  true !default;
+$katt-enable-module-generic-reset:                      true !default;
+$katt-enable-module-generic-shared:                     true !default;
+$katt-enable-module-base-headings:                      true !default;
+$katt-enable-module-base-page:                          true !default;
+$katt-enable-module-base-images:                        true !default;
+$katt-enable-module-base-lists:                         true !default;
+$katt-enable-module-objects-buttons:                    true !default;
+$katt-enable-module-objects-layout:                     true !default;
+$katt-enable-module-objects-vertically-centered:        true !default;
+$katt-enable-module-objects-block:                      true !default;
+$katt-enable-module-objects-box:                        true !default;
+$katt-enable-module-objects-flag:                       true !default;
+$katt-enable-module-objects-list-bare:                  true !default;
+$katt-enable-module-objects-list-block:                 true !default;
+$katt-enable-module-objects-list-inline:                true !default;
+$katt-enable-module-objects-list-ui:                    true !default;
+$katt-enable-module-objects-media:                      true !default;
+$katt-enable-module-objects-pack:                       true !default;
+$katt-enable-module-objects-tables:                     true !default;
+$katt-enable-module-objects-tabs:                       true !default;
+$katt-enable-module-trumps-clearfix:                    true !default;
+$katt-enable-module-trumps-heading:                     true !default;
+$katt-enable-module-trumps-widths:                      true !default;
+$katt-enable-module-trumps-spacing:                     true !default;
+$katt-enable-module-trumps-show-hide:                   true !default;

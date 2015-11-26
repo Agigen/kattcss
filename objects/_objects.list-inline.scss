@@ -1,0 +1,56 @@
+/*------------------------------------*\
+    Objects - List-Inline
+\*------------------------------------*/
+
+/**
+ * Sourced from Inuitcss (https://github.com/inuitcss), Copyright 2014 Harry Roberts
+ */
+
+/**
+ * The list-inline object simply displays a list of items in one line.
+ */
+
+@if ($katt-enable-module-objects-list-inline == true) {
+
+.#{$katt-list-inline-namespace}list-inline,
+%#{$katt-list-inline-namespace}list-inline {
+    margin:  0;
+    padding: 0;
+    list-style: none;
+
+    > li {
+        display: inline-block;
+    }
+
+}
+
+
+
+
+
+@if ($katt-enable-list-inline--delimited == true) {
+
+    /**
+     * Comma delimited list to semantically mark up lists of tags, etc.
+     *
+     * N.B. This component requires that you remove the whitespace between LIs.
+     *      The simplest (and valid) way to achieve this is by omitting the
+     *      closing `</li>` tag.
+     */
+
+    .#{$katt-list-inline-namespace}list-inline--delimited,
+    %#{$katt-list-inline-namespace}list-inline--delimited {
+
+        > li + li {
+
+            &:before {
+                content: "#{$katt-list-inline-delimit-character}";
+            }
+
+        }
+
+    }
+
+}
+
+}

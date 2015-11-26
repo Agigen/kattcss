@@ -1,0 +1,19 @@
+/*------------------------------------*\
+    Settings - Block
+\*------------------------------------*/
+
+$katt-block-namespace:     $katt-namespace !default;
+
+$katt-block-gutter:            $katt-base-spacing-unit !default;
+$katt-block-gutter--tiny:        quarter($katt-block-gutter) !default;
+$katt-block-gutter--small:         halve($katt-block-gutter) !default;
+$katt-block-gutter--large:        double($katt-block-gutter) !default;
+$katt-block-gutter--huge:      quadruple($katt-block-gutter) !default;
+
+$katt-enable-block--flush:     false !default;
+$katt-enable-block--tiny:      false !default;
+$katt-enable-block--small:     false !default;
+$katt-enable-block--large:     false !default;
+$katt-enable-block--huge:      false !default;
+$katt-enable-block--center:    false !default;
+$katt-enable-block--right:     false !default;

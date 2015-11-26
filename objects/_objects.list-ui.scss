@@ -1,0 +1,118 @@
+/*------------------------------------*\
+    Objects - List-UI
+\*------------------------------------*/
+
+/**
+ * Sourced from Inuitcss (https://github.com/inuitcss), Copyright 2014 Harry Roberts
+ */
+
+/**
+ * The UI list object creates blocky list items with a keyline separator out of
+ * a `ul` or `ol`.
+ */
+
+@if ($katt-enable-module-objects-list-ui == true) {
+
+.#{$katt-list-ui-namespace}list-ui,
+%#{$katt-list-ui-namespace}list-ui,
+    .#{$katt-list-ui-namespace}list-ui__item,
+    %#{$katt-list-ui-namespace}list-ui__item {
+        border: 0 $katt-list-ui-border-style $katt-list-ui-border-color;
+    }
+
+.#{$katt-list-ui-namespace}list-ui,
+%#{$katt-list-ui-namespace}list-ui {
+    margin:  0;
+    padding: 0;
+    list-style: none;
+    border-top-width: $katt-list-ui-border-width;
+
+    > li {
+        @extend %#{$katt-list-ui-namespace}list-ui__item;
+    }
+
+}
+
+    .#{$katt-list-ui-namespace}list-ui__item,
+    %#{$katt-list-ui-namespace}list-ui__item {
+        padding: $katt-list-ui-padding;
+        border-bottom-width: $katt-list-ui-border-width;
+    }
+
+
+
+
+
+@if ($katt-enable-list-ui--tiny == true) {
+
+    /**
+     * Tiny list-uis.
+     */
+
+    .#{$katt-list-ui-namespace}list-ui--tiny,
+    %#{$katt-list-ui-namespace}list-ui--tiny {
+
+        > .#{$katt-list-ui-namespace}list-ui__item,
+        > %#{$katt-list-ui-namespace}list-ui__item {
+            padding: $katt-list-ui-padding--tiny;
+        }
+
+    }
+
+}
+
+@if ($katt-enable-list-ui--small == true) {
+
+    /**
+     * Small list-uis.
+     */
+
+    .#{$katt-list-ui-namespace}list-ui--small,
+    %#{$katt-list-ui-namespace}list-ui--small {
+
+        > .#{$katt-list-ui-namespace}list-ui__item,
+        > %#{$katt-list-ui-namespace}list-ui__item {
+            padding: $katt-list-ui-padding--small;
+        }
+
+    }
+
+}
+
+@if ($katt-enable-list-ui--large == true) {
+
+    /**
+     * Large list-uis.
+     */
+
+    .#{$katt-list-ui-namespace}list-ui--large,
+    %#{$katt-list-ui-namespace}list-ui--large {
+
+        > .#{$katt-list-ui-namespace}list-ui__item,
+        > %#{$katt-list-ui-namespace}list-ui__item {
+            padding: $katt-list-ui-padding--large;
+        }
+
+    }
+
+}
+
+@if ($katt-enable-list-ui--huge == true) {
+
+    /**
+     * Huge list-uis.
+     */
+
+    .#{$katt-list-ui-namespace}list-ui--huge,
+    %#{$katt-list-ui-namespace}list-ui--huge {
+
+        > .#{$katt-list-ui-namespace}list-ui__item,
+        > %#{$katt-list-ui-namespace}list-ui__item {
+            padding: $katt-list-ui-padding--huge;
+        }
+
+    }
+
+}
+
+}

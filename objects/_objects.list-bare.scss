@@ -1,0 +1,23 @@
+/*------------------------------------*\
+    Objects - List-Bare
+\*------------------------------------*/
+
+/**
+ * Sourced from Inuitcss (https://github.com/inuitcss), Copyright 2014 Harry Roberts
+ */
+
+/**
+ * The list-bare object simply removes any indents and bullet points from lists.
+ */
+
+
+@if ($katt-enable-module-objects-list-bare == true) {
+
+.#{$katt-list-bare-namespace}list-bare,
+%#{$katt-list-bare-namespace}list-bare {
+    margin:  0;
+    padding: 0;
+    list-style: none;
+}
+
+}

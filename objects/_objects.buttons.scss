@@ -1,0 +1,133 @@
+/*------------------------------------*\
+    Objects - Buttons
+\*------------------------------------*/
+
+/**
+ * Sourced from Inuitcss (https://github.com/inuitcss), Copyright 2014 Harry Roberts
+ */
+
+/**
+ * A simple button object.
+ */
+
+@if ($katt-enable-module-objects-buttons == true) {
+
+/**
+ * 1. Allow us to style box model properties.
+ * 2. Line different sized buttons up a little nicer.
+ * 3. Make buttons inherit font styles (often necessary when styling `input`s as
+ *    buttons).
+ * 4. Reset/normalize some styles.
+ * 5. Force all button-styled elements to appear clickable.
+ * 6. Fixes odd inner spacing in IE7.
+ * 7. Subtract the border size from the padding value so that buttons do not
+ *    grow larger as we add borders.
+ */
+.#{$katt-btn-namespace}o-btn,
+%#{$katt-btn-namespace}o-btn {
+    display: inline-block; /* [1] */
+    vertical-align: middle; /* [2] */
+    font: inherit; /* [3] */
+    text-align: center; /* [4] */
+    margin:  0; /* [4] */
+    cursor: pointer; /* [5] */
+    overflow: visible; /* [6] */
+    padding: $katt-btn-padding - $katt-btn-border-width  double($katt-btn-padding) - $katt-btn-border-width; /* [7] */
+    background-color: $katt-btn-background;
+
+    @if($katt-btn-border-width != 0) {
+        border: $katt-btn-border-width $katt-btn-border-style $katt-btn-border-color;
+    } @else {
+        border: none; /* [4] */
+    }
+
+    @if($katt-btn-radius != 0) {
+        border-radius: $katt-btn-radius;
+    }
+
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+        text-decoration: none; /* [4] */
+        color: $katt-btn-color;
+    }
+
+}
+
+/**
+ * Fix a Firefox bug whereby `input type="submit"` gains 2px extra padding.
+ */
+.#{$katt-btn-namespace}o-btn::-moz-focus-inner,
+%#{$katt-btn-namespace}o-btn::-moz-focus-inner {
+    border:  0;
+    padding: 0;
+}
+
+
+
+
+
+@if ($katt-enable-btn--small == true) {
+
+    /**
+     * Small buttons.
+     */
+
+    .#{$katt-btn-namespace}o-btn--small,
+    %#{$katt-btn-namespace}o-btn--small {
+        padding: $katt-btn-padding--small - $katt-btn-border-width  double($katt-btn-padding--small) - $katt-btn-border-width; /* [7] */
+    }
+
+}
+
+@if ($katt-enable-btn--large == true) {
+
+    /**
+     * Large buttons.
+     */
+
+    .#{$katt-btn-namespace}o-btn--large,
+    %#{$katt-btn-namespace}o-btn--large {
+        padding: $katt-btn-padding--large - $katt-btn-border-width  double($katt-btn-padding--large) - $katt-btn-border-width; /* [7] */
+    }
+
+}
+
+
+
+
+
+@if ($katt-enable-btn--full == true) {
+
+    /**
+     * Full-width buttons.
+     */
+
+    .#{$katt-btn-namespace}o-btn--full,
+    %#{$katt-btn-namespace}o-btn--full {
+        width: 100%;
+    }
+}
+
+
+
+
+
+@if ($katt-enable-btn--pill == true) {
+
+    /**
+     * Round-ended buttons.
+     *
+     * 1. Overly-large value to ensure the radius rounds the whole end of the
+     *    button.
+     */
+
+    .#{$katt-btn-namespace}o-btn--pill,
+    %#{$katt-btn-namespace}o-btn--pill {
+        border-radius: 100px; /* [1] */
+    }
+
+}
+
+}

@@ -1,0 +1,24 @@
+/*------------------------------------*\
+    Objects - Vertically-Centered
+\*------------------------------------*/
+
+/**
+ * .o-vertically-centered
+ *      A container which children will be vertically centered
+ * .o-vertically-centered__content
+ *      A container that'll hold the content you want to center
+ */
+
+@if ($katt-enable-module-objects-vertically-centered == true) {
+
+.o-vertically-centered {
+    height: 100%;
+    display: table;
+}
+
+    .o-vertically-centered__content {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+}

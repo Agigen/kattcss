@@ -1,0 +1,39 @@
+/*------------------------------------*\
+    Base - Headings
+\*------------------------------------*/
+
+/**
+ * Sourced from Inuitcss (https://github.com/inuitcss), Copyright 2014 Harry Roberts
+ */
+
+@if ($katt-enable-module-base-headings == true) {
+
+/**
+ * Headings 1–6.
+ */
+
+h1 {
+    @include katt-font-size($katt-heading-size-1);
+}
+
+h2 {
+    @include katt-font-size($katt-heading-size-2);
+}
+
+h3 {
+    @include katt-font-size($katt-heading-size-3);
+}
+
+h4 {
+    @include katt-font-size($katt-heading-size-4);
+}
+
+h5 {
+    @include katt-font-size($katt-heading-size-5);
+}
+
+h6 {
+    @include katt-font-size($katt-heading-size-6);
+}
+
+}

@@ -1,0 +1,99 @@
+/*------------------------------------*\
+    Objects - Box
+\*------------------------------------*/
+
+/**
+ * Sourced from Inuitcss (https://github.com/inuitcss), Copyright 2014 Harry Roberts
+ */
+
+/**
+ * The box object simply boxes off content.
+ */
+
+@if ($katt-enable-module-objects-box == true) {
+
+/**
+ * 1. So we can apply the `.box` class to naturally-inline elements.
+ */
+.#{$katt-box-namespace}box,
+%#{$katt-box-namespace}box {
+    @extend %clearfix;
+    display: block; /* [1] */
+    padding: $katt-box-padding;
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+
+}
+
+
+
+
+
+@if ($katt-enable-box--flush == true) {
+
+    /**
+     * Flush (i.e. no padding) box.
+     */
+
+    .#{$katt-box-namespace}box--flush,
+    %#{$katt-box-namespace}box--flush {
+        padding: 0;
+    }
+
+}
+
+@if ($katt-enable-box--tiny == true) {
+
+    /**
+     * Tiny box.
+     */
+
+    .#{$katt-box-namespace}box--tiny,
+    %#{$katt-box-namespace}box--tiny {
+        padding: $katt-box-padding--tiny;
+    }
+
+}
+
+@if ($katt-enable-box--small == true) {
+
+    /**
+     * Small box.
+     */
+
+    .#{$katt-box-namespace}box--small,
+    %#{$katt-box-namespace}box--small {
+        padding: $katt-box-padding--small;
+    }
+
+}
+
+@if ($katt-enable-box--large == true) {
+
+    /**
+     * Large box.
+     */
+
+    .#{$katt-box-namespace}box--large,
+    %#{$katt-box-namespace}box--large {
+        padding: $katt-box-padding--large;
+    }
+
+}
+
+@if ($katt-enable-box--huge == true) {
+
+    /**
+     * Huge box.
+     */
+
+    .#{$katt-box-namespace}box--huge,
+    %#{$katt-box-namespace}box--huge {
+        padding: $katt-box-padding--huge;
+    }
+
+}
+
+}

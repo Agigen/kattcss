@@ -1,0 +1,17 @@
+/*------------------------------------*\
+    Settings - Box
+\*------------------------------------*/
+
+$katt-box-namespace:       $katt-namespace !default;
+
+$katt-box-padding:         $katt-base-spacing-unit !default;
+$katt-box-padding--tiny:     quarter($katt-box-padding) !default;
+$katt-box-padding--small:      halve($katt-box-padding) !default;
+$katt-box-padding--large:     double($katt-box-padding) !default;
+$katt-box-padding--huge:   quadruple($katt-box-padding) !default;
+
+$katt-enable-box--flush:   false !default;
+$katt-enable-box--tiny:    false !default;
+$katt-enable-box--small:   false !default;
+$katt-enable-box--large:   false !default;
+$katt-enable-box--huge:    false !default;

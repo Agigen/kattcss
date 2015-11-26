@@ -1,0 +1,40 @@
+/*------------------------------------*\
+    Settings - Defaults
+\*------------------------------------*/
+
+/**
+ * Sourced from Inuitcss (https://github.com/inuitcss), Copyright 2014 Harry Roberts
+ */
+
+// These variables are kattcss’ defaults; they should not be modified or
+// adjusted directly; you should predefine the variables in your own project.
+//
+
+// High-level base settings.
+$katt-base-font-size:          16px !default;
+$katt-base-line-height:        24px !default;
+$katt-base-text-color:         #333 !default;
+$katt-base-background-color:   #fff !default;
+
+
+
+
+
+// Namespace.
+//
+// Would you like kattcss’ classes to be prepended with a namespace? If so,
+// define it here.
+$katt-namespace:               null !default;
+
+
+
+
+
+// These variables are framework variables, sourced from variables defined
+// above. Feel free to use these variables throughout your project, but do not
+// modify or reassign them.
+$katt-base-spacing-unit:           $katt-base-line-height;
+$katt-base-spacing-unit--tiny:     round($katt-base-spacing-unit / 4);
+$katt-base-spacing-unit--small:    round($katt-base-spacing-unit / 2);
+$katt-base-spacing-unit--large:    round($katt-base-spacing-unit * 2);
+$katt-base-spacing-unit--huge:     round($katt-base-spacing-unit * 4);
