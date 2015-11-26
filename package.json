@@ -2,6 +2,10 @@
   "name": "kattcss",
   "version": "0.1.0",
   "description": "A CSS framework built upon and extending inuitcss",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Agigen/kattcss"
+  },
   "keywords": [
     "kattcss",
     "inuitcss",
